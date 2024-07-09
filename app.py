@@ -15,14 +15,14 @@ app = Flask(__name__, static_folder='static')
 
 class Config:
     SECRET_KEY = 'cT9UvAdyX8TUtEo9FTXJ6yLg59gD4q8g'
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:Madhu%4014@localhost/room_buddy_db'
+    SQLALCHEMY_DATABASE_URI = 'mysql://username:password@localhost/room_buddy_db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'harshabora23@gmail.com'
-    MAIL_PASSWORD = 'eqrzixbzhtanleul'
-    MAIL_DEFAULT_SENDER = 'harshabora23@gmail.com'
+    MAIL_USERNAME = 'email@gmail.com'
+    MAIL_PASSWORD = 'passkey or password'
+    MAIL_DEFAULT_SENDER = 'email@gmail.com'
     UPLOAD_FOLDER = 'D:/Room buddy/static/Uploads'
 
     # Token expiration time in seconds (1 hour)
