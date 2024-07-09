@@ -1,0 +1,20 @@
+<!-- navbar.html -->
+<nav class="navbar">
+    <div class="navbar-logo">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Room Buddy Logo">
+        </a>
+    </div>
+    <ul class="navbar-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('search') }}">Search</a></li>
+        {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('postad') }}">Post Ad</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% endif %}
+        
+    </ul>
+</nav>

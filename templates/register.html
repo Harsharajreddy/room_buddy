@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Buddy - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="bg-image">
+        <h2 style="text-shadow: 1px 2px 2px rgb(0, 0, 0);padding-left:20px;">Welcome to Room Buddy! Register now to get started.</h2>
+        <div class="form-container">
+            <div class="form-box left-box">
+                <h2>Register</h2>
+                <p>Don't have an account with us? Register easily right now.</p>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    <div class="alert alert-danger">
+                      {% for category, message in messages %}
+                        <p class="text-{{ category }}">{{ message }}</p>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endwith %}
+                <form id="register_form" method="POST" action="{{ url_for('register') }}" onsubmit="return validateForm()">
+                    <div class="row">
+                        <div class="column">
+                            <label for="register_username">Username</label>
+                            <input type="text" id="register_username" name="register_username" required>
+                            <label for="register_email">Email</label>
+                            <input type="email" id="register_email" name="register_email" required>
+                            <label for="register_password">Password</label>
+                            <input type="password" id="register_password" name="register_password" required>
+                        </div>
+                        <div class="column">
+                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="phone_number">Phone Number</label>
+                            <input type="text" id="phone_number" name="phone_number" required>
+                        </div>
+                    </div>
+                    <div id="password-requirements" style="display: none;">
+                        <span id="length" class="invalid">8+ characters</span>
+                        <span id="number" class="invalid">At least 1 number</span>
+                        <span id="special" class="invalid">At least 1 special character</span>
+                    </div>
+                    <input type="submit" name="register" value="Register">
+                </form>
+                <p>Already a user? <a href="{{ url_for('login') }}">Please login.</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

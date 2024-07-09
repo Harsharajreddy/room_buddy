@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Buddy - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="bg-image">
+        <h2 style="text-shadow: 1px 2px 2px rgb(0, 0, 0);font-size:35px;">Welcome to Room Buddy!</h2>
+        <div class="form-container">
+            <div class="form-box right-box">
+                <h2>Login</h2>
+                <p>Already a user? Please login.</p>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    <div class="alert alert-danger">
+                      {% for category, message in messages %}
+                        <p class="text-{{ category }}">{{ message }}</p>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endwith %}
+                <form method="POST" id="loginform" action="{{ url_for('login') }}">
+                    <label for="login_username">Username</label>
+                    <input type="text" id="login_username" name="login_username" required>
+                    <label for="login_password">Password</label>
+                    <input type="password" id="login_password" name="login_password" required>
+                    <input type="submit" name="login" value="Login">
+                </form>
+                <p><a href="{{ url_for('forgot_password') }}">Forgot Password?</a></p>
+                <p>New to Room Buddy? <a href="{{ url_for('register') }}">Create an account</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

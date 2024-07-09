@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Buddy - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="background-section welcome-section">
+        <div class="gradient-overlay-top"></div>
+            <div class="content-welcome">
+                <div class="welcome-text">
+                    <h1>Welcome to Room Buddy</h1>
+                    <p>Your trusted partner in finding the perfect living space and roommates. Our mission is to make the process of finding and sharing a home seamless, secure, and enjoyable. Whether you're looking to post a room for rent or searching for the ideal place to live, Room Buddy is here to help you every step of the way.</p>
+                    <a href="{{ url_for('search') }}" class="btn">Click here to find available rooms</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-section success-stories-section">
+        <div class="gradient-overlay-bottom"></div>
+            <div class="content">
+                <div class="success-story">
+                    <h2>Success Stories</h2>
+                    <div class="success-stories-container">
+                        <div class="success-story-box">
+                            <h3>User Name 1</h3>
+                            <p>"I found the perfect roommate through Room Buddy. The process was smooth and efficient!"</p>
+                        </div>
+                        <div class="success-story-box">
+                            <h3>User Name 2</h3>
+                            <p>"Room Buddy helped me find a room that matched all my preferences. Highly recommended!"</p>
+                        </div>
+                        <div class="success-story-box">
+                            <h3>User Name 3</h3>
+                            <p>"Thanks to Room Buddy, I found a great apartment and a roommate who shares similar interests."</p>
+                        </div>
+                        <div class="success-story-box">
+                            <h3>User Name 4</h3>
+                            <p>"Room Buddy made it easy for me to connect with potential roommates. It's a fantastic platform!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-section popular-cities-section">
+        <div class="gradient-overlay"></div>
+        <div class="content">
+            <h2>Popular Cities in the USA</h2>
+            <div class="cities-grid">
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/newyork.jpg') }}" alt="New York City">
+                    <div class="city-name">New York</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/losangeles.webp') }}" alt="Los Angeles">
+                    <div class="city-name">Los Angeles</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/chicago.avif') }}" alt="City 3">
+                    <div class="city-name">Chicago</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/houston.jpg') }}" alt="City 4">
+                    <div class="city-name">Houston</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/miami.jpg') }}" alt="City 5">
+                    <div class="city-name">Phoenix</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/seattle.jpg') }}" alt="City 5">
+                    <div class="city-name">Seattle</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/sanfran.jpg') }}" alt="City 5">
+                    <div class="city-name">San Francisco</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/lasvegas.jpg') }}" alt="City 5">
+                    <div class="city-name">Las Vegas</div>
+                </div>
+                <div class="city">
+                    <img src="{{ url_for('static', filename='images/dallas.jpeg') }}" alt="City 5">
+                    <div class="city-name">Dallas</div>
+                </div>
+                <!-- Add more cities as needed -->
+            </div>
+        </div>
+    </div>
+
+    <div class="background-section about-us-section">
+        <div class="gradient-overlay-bottom"></div>
+        <div class="content">
+            <div class="about-us-container">
+                <div class="about-us-image">
+                    <img src="{{ url_for('static', filename='images/aboutus.jpg') }}" alt="About Us">
+                    <div class="image-attribution">
+                        <a href="https://www.freepik.com/free-photo/friends-having-fun-with-traditional-games_23987740.htm#fromView=search&page=3&position=2&uuid=76b9c09c-a6ae-429a-8080-66108cf5bec0">Image by freepik</a>
+                    </div>
+                </div>
+                <div class="about-us">
+                    <h2>About Us</h2>
+                    <p>Room Buddy is your trusted partner in finding the perfect living space and roommates. Our mission is to make the process of finding and sharing a home seamless, secure, and enjoyable. Whether you're looking to post a room for rent or searching for the ideal place to live, Room Buddy is here to help you every step of the way.</p>
+                    <h3>Our Mission</h3>
+                    <p>At Room Buddy, we're dedicated to creating a community where people can connect, share, and thrive together. We understand the profound impact of finding the right roommate and living space on your lifestyle and peace of mind. That's why our platform prioritizes safety, convenience, and user satisfaction, ensuring you find both the perfect living space and roommate seamlessly. Join us today and discover your ideal home and companions effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% include 'footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

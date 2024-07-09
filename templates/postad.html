@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Buddy - POST AD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="dash-div">
+        <h1 class="centered-heading">Post Your Ad for Free</h1>
+        <form method="POST" action="{{ url_for('postad') }}" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+
+                    <div class="form-row">
+                        <div class="form-column-half">
+                            <label for="rent">Rent:</label>
+                            <input type="number" id="rent" name="rent" required>
+                        </div>
+                        <div class="form-column-half">
+                            <label for="utilities">Utilities:</label>
+                            <input type="text" id="utilities" name="utilities" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column-half">
+                            <label for="availability">Availability:</label>
+                            <input type="date" id="availability" name="availability" required>
+                        </div>
+                        <div class="form-column-half">
+                            <label for="furnished">Furnished:</label>
+                            <select id="furnished" name="furnished" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column-half">
+                            <label for="bedrooms">Bedrooms:</label>
+                            <input type="number" id="bedrooms" name="bedrooms" required>
+                        </div>
+                        <div class="form-column-half">
+                            <label for="bathrooms">Bathrooms:</label>
+                            <input type="number" id="bathrooms" name="bathrooms" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column-half">
+                            <label for="pets">Pets Allowed:</label>
+                            <select id="pets" name="pets" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-column-half">
+                            <label for="laundry">Laundry:</label>
+                            <select id="laundry" name="laundry" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="in_unit">In Unit</option>
+                                <option value="on_site">On Site</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-column">
+                    <label for="photos">Photos:</label>
+                    <input type="file" id="photos" name="photos" accept="image/*" multiple>
+
+                    <div class="form-row">
+                        <div class="form-column-half">
+                            <label for="city">City:</label>
+                            <input type="text" class="form-control" id="city" name="city" required>
+                        </div>
+                        <div class="form-column-half">
+                            <label for="state">State:</label>
+                            <input type="text" class="form-control" id="state" name="state" required>  
+                        </div>
+                    </div>
+
+                    <h2>Roommate Preferences</h2>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="">No Preference</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="age_group">Age Group:</label>
+                    <input type="text" id="age_group" name="age_group" required>
+
+                    <label for="smoking">Smoking:</label>
+                    <select id="smoking" name="smoking" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="no preference">No Preference</option>
+                    </select>
+
+                    <label for="students_only">Students Only:</label>
+                    <select id="students_only" name="students_only" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="no preference">No Preference</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" value="Post Ad">
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

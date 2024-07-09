@@ -1,0 +1,23 @@
+<!-- footer.html -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-div">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:your-email@gmail.com">your-email@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('postad') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2024 Room Buddy. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
