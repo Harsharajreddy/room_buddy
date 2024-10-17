@@ -2,7 +2,6 @@
 
 Room Buddy is a web application designed to help people find roommates for available spaces by allowing users to post and search for room advertisements online.
 
-
 ## Table of Contents
 1. [Features](#features)
 2. [Project Structure](#project-structure)
